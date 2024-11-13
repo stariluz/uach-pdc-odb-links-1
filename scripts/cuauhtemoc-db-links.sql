@@ -4,7 +4,7 @@ create database link cuauhtemoc_chihuahua
 using '(DESCRIPTION =
          (ADDRESS=
             (PROTOCOL = TCP)
-            (HOST = 172.18.0.3)
+            (HOST = 172.18.0.4)
             (PORT = 1521)
          )
          (CONNECT_DATA =
@@ -18,7 +18,7 @@ create database link cuauhtemoc_juarez
 using '(DESCRIPTION =
          (ADDRESS=
             (PROTOCOL = TCP)
-            (HOST = 172.18.0.2)
+            (HOST = 172.18.0.3)
             (PORT = 1521)
          )
          (CONNECT_DATA =
