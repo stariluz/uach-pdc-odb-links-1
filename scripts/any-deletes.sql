@@ -1,10 +1,10 @@
 -- Eliminación de huertas
 
-EXECUTE delete_apple_orchard(6);
-EXECUTE delete_apple_orchard(7);
-EXECUTE delete_apple_orchard(8);
-EXECUTE delete_apple_orchard(9);
-EXECUTE delete_apple_orchard(10);
+EXECUTE delete_apple_orchard('Orchard La Huerta');
+EXECUTE delete_apple_orchard('Orchard El Progreso');
+EXECUTE delete_apple_orchard('Orchard Buenavista');
+EXECUTE delete_apple_orchard('Orchard La Paz');
+EXECUTE delete_apple_orchard('Orchard Los Arboles');
 
 
 -- Eliminación de ventas
