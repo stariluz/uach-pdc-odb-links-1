@@ -1,7 +1,13 @@
 # Oracle Database. Conexión Básica con Database Links 
 
 Proyecto básico para la conexión de instancias de Oracle Database Free [ejecutadas en
-contenedores de docker] mediante el uso de **Database Links**;
+contenedores de docker] mediante el uso de **Database Links**.
+
+### Descripción.
+
+El proyecto supone un negocio de manzanas que posee distintas huertas en distintas localidades. Los servidores de bases de datos se ubican en Chihuahua, Juárez y Cuauhtemoc.
+
+Chihuahua es el servidor principal.
 
 ### Prerequisitos
 - Docker
