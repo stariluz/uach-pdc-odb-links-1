@@ -1,19 +1,29 @@
--- Actualización de datos en huertas
+-- Creación de huertas en diferentes servidores
 BEGIN
-    update_apple_orchard(1, 'Orchard El Nuevo Sol', 'Nuevo Valle de Bravo');
-    update_apple_orchard(2, 'Orchard Amistad Actualizada', 'Nuevo Guanajuato');
-    update_apple_orchard(3, 'Orchard Esperanza Actualizada', 'Nuevo Querétaro');
-    update_apple_orchard(4, 'Orchard Manzanos Renovados', 'Nuevo Puebla');
-    update_apple_orchard(5, 'Orchard Frutales Actualizados', 'Nuevo Toluca');
+    insert_apple_orchard('Orchard El Sol', 'Valle de Bravo', 'chihuahua');
+    insert_apple_orchard('Orchard La Amistad', 'Guanajuato', 'chihuahua');
+    insert_apple_orchard('Orchard La Esperanza', 'Querétaro', 'cuauhtemoc');
+    insert_apple_orchard('Orchard Los Manzanos', 'Puebla', 'juarez');
+    insert_apple_orchard('Orchard Frutales', 'Toluca', 'chihuahua');
+    insert_apple_orchard('Orchard La Huerta', 'Morelia', 'cuauhtemoc');
+    insert_apple_orchard('Orchard El Progreso', 'Celaya', 'juarez');
+    insert_apple_orchard('Orchard Buenavista', 'Chilpancingo', 'chihuahua');
+    insert_apple_orchard('Orchard La Paz', 'Oaxaca', 'juarez');
+    insert_apple_orchard('Orchard Los Arboles', 'Zacatecas', 'cuauhtemoc');
 END;
 /
 
--- Actualización de datos en ventas
+-- Creación de ventas en diferentes huertas
 BEGIN
-    update_apple_orchard_sale(1, DATE '2024-11-01', 325.00, 155);
-    update_apple_orchard_sale(2, DATE '2024-11-03', 345.00, 185);
-    update_apple_orchard_sale(3, DATE '2024-11-05', 355.00, 125);
-    update_apple_orchard_sale(4, DATE '2024-11-07', 315.00, 205);
-    update_apple_orchard_sale(5, DATE '2024-11-09', 335.00, 175);
+    insert_apple_orchard_sale(1, DATE '2024-10-01', 320.00, 150);
+    insert_apple_orchard_sale(2, DATE '2024-10-05', 340.00, 180);
+    insert_apple_orchard_sale(3, DATE '2024-10-07', 350.00, 120);
+    insert_apple_orchard_sale(4, DATE '2024-10-09', 310.00, 200);
+    insert_apple_orchard_sale(5, DATE '2024-10-11', 330.00, 170);
+    insert_apple_orchard_sale(6, DATE '2024-10-12', 360.00, 220);
+    insert_apple_orchard_sale(7, DATE '2024-10-14', 340.00, 130);
+    insert_apple_orchard_sale(8, DATE '2024-10-15', 300.00, 140);
+    insert_apple_orchard_sale(9, DATE '2024-10-16', 310.00, 110);
+    insert_apple_orchard_sale(10, DATE '2024-10-18', 330.00, 160);
 END;
 /
