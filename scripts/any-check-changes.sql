@@ -1,21 +1,21 @@
-SELECT * FROM apple_orchards@chihuahua_link
+SELECT * FROM apple_chihuahua
 UNION
-SELECT * FROM apple_orchards@juarez_link
+SELECT * FROM apple_juarez
 UNION
-SELECT * FROM apple_orchards@cuauhtemoc_link;
+SELECT * FROM apple_cuauhtemoc;
 
-SELECT * FROM apple_orchards@chihuahua_link;
-SELECT * FROM apple_orchards@juarez_link;
-SELECT * FROM apple_orchards@cuauhtemoc_link;
+SELECT * FROM apple_chihuahua;
+SELECT * FROM apple_juarez;
+SELECT * FROM apple_cuauhtemoc;
 
-SELECT * FROM apple_orchard_sales@chihuahua_link
+SELECT * FROM sales_chihuahua
 UNION
-SELECT * FROM apple_orchard_sales@juarez_link
+SELECT * FROM sales_juarez
 UNION
-SELECT * FROM apple_orchard_sales@cuauhtemoc_link;
+SELECT * FROM sales_cuauhtemoc;
 
-SELECT * FROM apple_orchard_sales@chihuahua_link;
-SELECT * FROM apple_orchard_sales@juarez_link;
-SELECT * FROM apple_orchard_sales@cuauhtemoc_link;
+SELECT * FROM sales_chihuahua;
+SELECT * FROM sales_juarez;
+SELECT * FROM sales_cuauhtemoc;
 
 COMMIT;

@@ -10,31 +10,31 @@ BEGIN
     INTO v_server
     FROM (
         SELECT server
-        FROM apple_orchards@chihuahua_link
+        FROM apple_chihuahua
         WHERE orchard_name = p_orchard_name
         UNION
         SELECT server
-        FROM apple_orchards@juarez_link
+        FROM apple_juarez
         WHERE orchard_name = p_orchard_name
         UNION
         SELECT server
-        FROM apple_orchards@cuauhtemoc_link
+        FROM apple_cuauhtemoc
         WHERE orchard_name = p_orchard_name
     ) combined_servers;
 
     -- Actualizar en el servidor correspondiente
     IF v_server = 'chihuahua' THEN
-        UPDATE apple_orchards@chihuahua_link
+        UPDATE apple_chihuahua
         SET orchard_name = p_new_name, location = p_new_location
         WHERE orchard_name = p_orchard_name;
 
     ELSIF v_server = 'cuauhtemoc' THEN
-        UPDATE apple_orchards@cuauhtemoc_link
+        UPDATE apple_cuauhtemoc
         SET orchard_name = p_new_name, location = p_new_location
         WHERE orchard_name = p_orchard_name;
 
     ELSIF v_server = 'juarez' THEN
-        UPDATE apple_orchards@juarez_link
+        UPDATE apple_juarez
         SET orchard_name = p_new_name, location = p_new_location
         WHERE orchard_name = p_orchard_name;
 
