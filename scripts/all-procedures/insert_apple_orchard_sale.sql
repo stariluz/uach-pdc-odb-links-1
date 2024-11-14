@@ -11,29 +11,29 @@ BEGIN
     INTO v_server
     FROM (
         SELECT server
-        FROM apple_orchards
+        FROM apple_orchards@chihuahua_link
         WHERE orchard_name = p_orchard_name
         UNION
         SELECT server
-        FROM apple_orchards@chihuahua_juarez
+        FROM apple_orchards@juarez_link
         WHERE orchard_name = p_orchard_name
         UNION
         SELECT server
-        FROM apple_orchards@chihuahua_cuauhtemoc
+        FROM apple_orchards@cuauhtemoc_link
         WHERE orchard_name = p_orchard_name
     ) combined_servers;
 
     -- Insertar en la tabla de ventas en el servidor correspondiente
     IF v_server = 'chihuahua' THEN
-        INSERT INTO apple_orchard_sales (orchard_name, sale_date, price, quantity_sold)
+        INSERT INTO apple_orchard_sales@chihuahua_link (orchard_name, sale_date, price, quantity_sold)
         VALUES (p_orchard_name, p_sale_date, p_price, p_quantity_sold);
 
     ELSIF v_server = 'cuauhtemoc' THEN
-        INSERT INTO apple_orchard_sales@chihuahua_cuauhtemoc (orchard_name, sale_date, price, quantity_sold)
+        INSERT INTO apple_orchard_sales@cuauhtemoc_link (orchard_name, sale_date, price, quantity_sold)
         VALUES (p_orchard_name, p_sale_date, p_price, p_quantity_sold);
 
     ELSIF v_server = 'juarez' THEN
-        INSERT INTO apple_orchard_sales@chihuahua_juarez (orchard_name, sale_date, price, quantity_sold)
+        INSERT INTO apple_orchard_sales@juarez_link (orchard_name, sale_date, price, quantity_sold)
         VALUES (p_orchard_name, p_sale_date, p_price, p_quantity_sold);
 
     ELSE

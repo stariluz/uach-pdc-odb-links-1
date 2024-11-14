@@ -6,15 +6,15 @@ CREATE OR REPLACE PROCEDURE insert_apple_orchard (
 BEGIN
     -- Verificamos que el servidor ingresado esté entre los permitidos
     IF LOWER(p_server) = 'chihuahua' THEN
-        INSERT INTO apple_orchards (orchard_name, location, server)
+        INSERT INTO apple_orchards@chihuahua_link(orchard_name, location, server)
         VALUES (p_orchard_name, p_location, LOWER(p_server));
 
     ELSIF LOWER(p_server) = 'cuauhtemoc' THEN
-        INSERT INTO apple_orchards@chihuahua_cuauhtemoc (orchard_name, location, server)
+        INSERT INTO apple_orchards@cuauhtemoc_link (orchard_name, location, server)
         VALUES (p_orchard_name, p_location, LOWER(p_server));
 
     ELSIF LOWER(p_server) = 'juarez' THEN
-        INSERT INTO apple_orchards@chihuahua_juarez (orchard_name, location, server)
+        INSERT INTO apple_orchards@juarez_link (orchard_name, location, server)
         VALUES (p_orchard_name, p_location, LOWER(p_server));
 
     ELSE

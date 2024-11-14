@@ -8,38 +8,38 @@ BEGIN
     INTO v_server
     FROM (
         SELECT server
-        FROM apple_orchards
+        FROM apple_orchards@chihuahua_link
         WHERE orchard_name = p_orchard_name
         UNION
         SELECT server
-        FROM apple_orchards@chihuahua_juarez
+        FROM apple_orchards@juarez_link
         WHERE orchard_name = p_orchard_name
         UNION
         SELECT server
-        FROM apple_orchards@chihuahua_cuauhtemoc
+        FROM apple_orchards@cuauhtemoc_link
         WHERE orchard_name = p_orchard_name
     ) combined_servers;
 
     -- Eliminar la huerta y sus ventas en el servidor correspondiente
     IF v_server = 'chihuahua' THEN
-        DELETE FROM apple_orchard_sales 
+        DELETE FROM apple_orchard_sales@chihuahua_link 
         WHERE orchard_name = p_orchard_name;
 
-        DELETE FROM apple_orchards
+        DELETE FROM apple_orchards@chihuahua_link
         WHERE orchard_name = p_orchard_name;
 
     ELSIF v_server = 'cuauhtemoc' THEN
-        DELETE FROM apple_orchard_sales@chihuahua_cuauhtemoc
+        DELETE FROM apple_orchard_sales@cuauhtemoc_link
         WHERE orchard_name = p_orchard_name;
 
-        DELETE FROM apple_orchards@chihuahua_cuauhtemoc
+        DELETE FROM apple_orchards@cuauhtemoc_link
         WHERE orchard_name = p_orchard_name;
 
     ELSIF v_server = 'juarez' THEN
-        DELETE FROM apple_orchard_sales@chihuahua_juarez
+        DELETE FROM apple_orchard_sales@juarez_link
         WHERE orchard_name = p_orchard_name;
 
-        DELETE FROM apple_orchards@chihuahua_juarez
+        DELETE FROM apple_orchards@juarez_link
         WHERE orchard_name = p_orchard_name;
 
     ELSE

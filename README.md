@@ -24,10 +24,13 @@ Chihuahua es el servidor principal.
 docker network create apples-network
 ```
 
-### 2. Crear contenedores
-
+#### 2. Descargar imagen
 ```sh
 docker pull container-registry.oracle.com/database/free:latest
+```
+### 3. Crear contenedores
+
+```sh
 docker stop chihuahua-odb
 docker rm chihuahua-odb
 docker run -dti --name chihuahua-odb \
@@ -53,7 +56,7 @@ docker run -dti --name cuauhtemoc-odb \
 container-registry.oracle.com/database/free:latest
 ```
 
-### 3. Obtener IP Address de los contenedores
+### 4. Obtener IP Address de los contenedores
 
 Al ejecutar
 
@@ -95,7 +98,7 @@ Se obtiene la respuesta de la red con las ips que asignó a sus contenedores.
 
 Estas IPs nos ayudarán en seguida para crear los database links.
 
-### 4. Conexiones desde un cliente de bases de datos
+### 5. Conexiones desde un cliente de bases de datos
 
 > [!TIP]
 > Puedes usar `sqlplus` desde la consola del contenedor si así deseas.
@@ -121,7 +124,7 @@ Llenas los datos, recordando cambiar el nombre de la conexión y el puerto del c
 Y listo, ya puedes usarlo como un cliente de sql. Recuerda crear una conexión para
 cada contenedor.
 
-### 5. Crear database links
+### 6. Crear database links
 
 > [!IMPORTANT]
 > Los scripts aquí mencionados están en la carpeta [scripts](./scripts/).
@@ -168,7 +171,7 @@ Si el último resultado regresa lo siguiente:
 
 Significa que funcionó.
 
-### 6. Crear tablas de prueba
+### 7. Crear tablas de prueba
 
 > [!IMPORTANT]
 > Los scripts aquí mencionados están en la carpeta [scripts](./scripts/).
@@ -176,7 +179,7 @@ Significa que funcionó.
 
 Ejecuta los scripts de creación de tablas para cada una de las conexiones según correspondan.
 
-### 7. Insertar datos de prueba
+### 8. Insertar datos de prueba
 
 > [!IMPORTANT]
 > Los scripts aquí mencionados están en la carpeta [scripts](./scripts/).
@@ -184,7 +187,7 @@ Ejecuta los scripts de creación de tablas para cada una de las conexiones segú
 
 Ejecuta los scripts de inserción de datos para cada una de las conexiones según correspondan.
 
-### 8. Probar funcionamiento de las conexiones
+### 9. Probar funcionamiento de las conexiones
 
 Si seguíste los pasos explicados en este tutorial hasta este punto, ya podrás obtendrer los datos de los demás contenedores, desde la base de datos de la conexión actual.
 

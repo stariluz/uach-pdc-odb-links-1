@@ -8,9 +8,9 @@ EXECUTE delete_apple_orchard('Orchard Los Arboles');
 
 
 -- Eliminación de ventas
-EXECUTE delete_apple_orchard_sale('26CC4BC7800F02DAE063040012ACA735');
-EXECUTE delete_apple_orchard_sale('26CC4BCAC5AD02D3E063030012AC3062');
-EXECUTE delete_apple_orchard_sale('26CC4BC9449E02D9E063020012AC728E');
-EXECUTE delete_apple_orchard_sale('26CC4BCAC5AE02D3E063030012AC3062');
-EXECUTE delete_apple_orchard_sale('26CC4BC944A002D9E063020012AC728E');
+EXECUTE delete_apple_orchard_sale('26D7CE3E164A0601E063020012AC9E70');
+EXECUTE delete_apple_orchard_sale('26D7CE3EF04705FAE063030012AC46B4');
+EXECUTE delete_apple_orchard_sale('26D7CE3EA12705FDE063040012AC0E61');
+EXECUTE delete_apple_orchard_sale('26D7CE3EA12905FDE063040012AC0E61');
+EXECUTE delete_apple_orchard_sale('26D7CE3E164C0601E063020012AC9E70');
 
